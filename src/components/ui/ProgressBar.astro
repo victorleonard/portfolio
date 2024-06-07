@@ -1,0 +1,11 @@
+---
+const { rate, color = 'bg-indigo-600' } = Astro.props;
+---
+
+<div>
+  <div class="mt-6" aria-hidden="true">
+    <div class="overflow-hidden rounded-full bg-gray-200">
+      <div class={`h-2 rounded-full ${color}`} style={`width: ${rate}%;`}></div>
+    </div>
+  </div>
+</div>
