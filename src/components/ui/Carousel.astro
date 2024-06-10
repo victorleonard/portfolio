@@ -1,0 +1,264 @@
+---
+import type { Content as Props } from '~/types';
+
+const {
+  images = []
+} = Astro.props;
+---
+
+<div id="slider-wrap">
+    <section>
+        <ul id="slider">
+            {
+                images.map((image: any) => (
+                <li><img src={image.src} alt={image.alt}/></li>
+                ))
+            }
+        </ul>
+        <div class="next-previous-navigation">
+            <div class="previous">&#8592;</div>
+            <div class="next">&#8594;</div>
+        </div>
+    </section>
+    <div id="dot-navigation"></div>
+</div>
+
+    <script>
+        ////////////////////
+// Const's
+////////////////////
+const _sliderAutoChangeTime = 5000;
+const _sliderWrap = document.getElementById("slider-wrap");
+const _slider = document.getElementById("slider");
+const _slides = _slider.querySelectorAll("li");
+const _sliderCount = _slides.length;
+const _dotNavigation = document.getElementById("dot-navigation");
+const _nextButton = document.querySelector(".next");
+const _previousButton = document.querySelector(".previous");
+
+////////////////////
+// Create Dot Navigation
+////////////////////
+_slides.forEach(function () {
+	_dotNavigation.innerHTML += "<li></li>";
+});
+
+////////////////////
+// Secondary Const's (now things are dynamically built)
+////////////////////
+const _dots = document.querySelectorAll("#dot-navigation li");
+
+////////////////////
+// Activate First Dot Navigation
+////////////////////
+_dots[0].classList.add("active");
+
+////////////////////
+// Activate First Slider
+////////////////////
+_slides[0].classList.add("active");
+
+////////////////////
+// Create Dot Navigation 'click' events
+////////////////////
+_dots.forEach(function (dot, index) {
+	dot.addEventListener("click", function () {
+		setActiveSliderIndex(index);
+	});
+});
+
+////////////////////
+// Previous Arrow 'click' event
+////////////////////
+_previousButton.addEventListener("click", function () {
+	let currentIndex = currentLiveIndex(),
+		previousIndex = currentIndex - 1 < 0 ? _sliderCount - 1 : currentIndex - 1;
+	setActiveSliderIndex(previousIndex);
+});
+
+////////////////////
+// Next Arrow 'click' event
+////////////////////
+_nextButton.addEventListener("click", function () {
+	MoveToNextSlider();
+});
+
+////////////////////
+// Move to Next Slider
+////////////////////
+let MoveToNextSlider = () => {
+	let currentIndex = currentLiveIndex(),
+		nextIndex = currentIndex + 1 > _sliderCount - 1 ? 0 : currentIndex + 1;
+	setActiveSliderIndex(nextIndex);
+};
+
+////////////////////
+// Current Live Slide Index
+////////////////////
+let currentLiveIndex = () => {
+	var response;
+	_slides.forEach(function (li, index) {
+		if (li.classList.contains("active")) response = index;
+	});
+	return response;
+};
+
+////////////////////
+// Set Slider and Dot Nav Active
+////////////////////
+let setActiveSliderIndex = (activeSliderIndex) => {
+	// Changes Slider
+	_slider.querySelector("li.active").classList.remove("active");
+	_slides[activeSliderIndex].classList.add("active");
+	// Change Dot Navigation
+	_dotNavigation.querySelector("li.active").classList.remove("active");
+	_dots[activeSliderIndex].classList.add("active");
+	// Reset Timer
+	restartInterval();
+};
+
+/* ////////////////////
+// Timer
+////////////////////
+let timer = setInterval(MoveToNextSlider, _sliderAutoChangeTime);
+
+////////////////////
+// Reset time between sliders
+////////////////////
+let restartInterval = () => {
+	clearInterval(timer);
+	timer = setInterval(MoveToNextSlider, _sliderAutoChangeTime);
+};
+
+////////////////////
+// Pause on hover
+////////////////////
+
+_slider.addEventListener("mouseover", function () {
+	clearInterval(timer);
+});
+_slider.addEventListener("mouseout", function () {
+	restartInterval();
+}); */
+
+    </script>
+
+<style lang="scss">
+$light: #eee;
+$light-shade-2: #ccc;
+$light-shade-3: #bababa;
+$dark: #444444;
+////////////////////
+// Slider - Basic Style
+////////////////////
+img {
+	max-width: 100%;
+}
+
+#slider-wrap {
+height: 100%;
+	section {
+		height: 100%;
+		position: relative;
+	}
+}
+
+#slider {
+	height: 100%;
+	list-style: none;
+	width: 100%;
+	text-align: center;
+	position: relative;
+	padding: 0;
+	margin: 0;
+	li {
+		height: 100%;
+		transition: all 0.2s;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 0;
+		text-align: center;
+		padding: 0;
+		transition: all 0.2s ease-in;
+		opacity: 0;
+		visibility: hidden;
+		background-color: rgba(0,0,0,0.1);
+		img {
+			height: 100%;
+			margin: 0 auto;
+		}
+		&.active {
+			display: block;
+			position: relative;
+			top: unset;
+			left: unset;
+			right: unset;
+			z-index: 1;
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+}
+
+////////////////////
+// Slider - Dot Navigation
+////////////////////
+#dot-navigation {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+	li {
+		width: 10px;
+		height: 10px;
+		margin: 10px;
+		background-color: rgba(0, 0, 0, 0);
+		display: inline-block;
+		border-radius: 75px;
+		border: 2px solid rgba(255, 255, 255, 1);
+		cursor: pointer;
+		&.active {
+			background-color: rgba(255, 255, 255, 1);
+			border: 2px solid rgba(255, 255, 255, 0);
+		}
+	}
+}
+
+////////////////////
+// Slider - Next / Previous Buttons
+////////////////////
+.next-previous-navigation {
+	display: flex;
+	position: absolute;
+	top: calc(50% - 40px);
+	left: 0;
+	right: 0;
+	z-index: 999999;
+	// I would remove these text arrows and apply an icon background or something
+	font-size: 2rem;
+	line-height: 1;
+	user-select: none;
+	.next,
+	.previous {
+		cursor: pointer;
+		padding: 10px;
+        font-weight: bold;
+        background-color: rgba(0,0,0,0.6);
+        color: #fff;
+        transition: all .5s;
+        &:hover {
+            background-color: rgba(0,0,0,1);
+        }
+	}
+	.next {
+		margin-left: auto;
+	}
+	.previous {
+		margin-right: auto;
+	}
+}
+
+
+</style>
