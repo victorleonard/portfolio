@@ -1,18 +1,18 @@
 ---
-import Layout from '~/layouts/PageLayout.astro';
+import Layout from "~/layouts/PageLayout.astro";
 
-import Header from '~/components/widgets/Header.astro';
-import Hero from '~/components/widgets/Hero.astro';
-import Content from '~/components/widgets/Content.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
-import Features3 from '~/components/widgets/Features3.astro';
-import Testimonials from '~/components/widgets/Testimonials.astro';
-import Steps from '~/components/widgets/Steps.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
-import { getPermalink } from '~/utils/permalinks';
+import Header from "~/components/widgets/Header.astro";
+import Hero from "~/components/widgets/Hero.astro";
+import Content from "~/components/widgets/Content.astro";
+import CallToAction from "~/components/widgets/CallToAction.astro";
+import Features3 from "~/components/widgets/Features3.astro";
+import Testimonials from "~/components/widgets/Testimonials.astro";
+import Steps from "~/components/widgets/Steps.astro";
+import BlogLatestPosts from "~/components/widgets/BlogLatestPosts.astro";
+import { getPermalink } from "~/utils/permalinks";
 
 const metadata = {
-  title: 'Personal Homepage Demo',
+  title: "Personal Homepage Demo",
 };
 ---
 
@@ -21,22 +21,21 @@ const metadata = {
   <Fragment slot="header">
     <Header
       links={[
-        { text: 'Home', href: '#' },
-        { text: 'Compétence', href: '#skills' },
-        { text: 'Projets', href: '#projects' },
-        { text: 'Contact', href: '#contact' }
+        { text: "Présentation", href: "#" },
+        { text: "Compétence", href: "#skills" },
+        { text: "Projets", href: "#projects" },
+        { text: "Contact", href: "#contact" },
       ]}
       actions={[
         {
-          text: 'Hire me',
-          href: '#',
+          text: "Linkedin",
+          href: "#",
         },
       ]}
       isSticky
       showToggleTheme
     />
   </Fragment>
-  
 
   <!-- Hero2 Widget ******************* -->
 
@@ -44,48 +43,55 @@ const metadata = {
     id="hero"
     title="Sarah Johnson"
     tagline="Personal Web Demo"
-    actions={[{ variant: 'primary', text: 'Hire me', href: getPermalink('/contact#form') }]}
+    actions={[
+      {
+        variant: "primary",
+        text: "Hire me",
+        href: getPermalink("/contact#form"),
+      },
+    ]}
   >
     <Fragment slot="subtitle">
-      I'm a Graphic Designer passionate about crafting visual stories. <br /> With 5 years of experience and a degree from
-      New York University's School of Design. I infuse vitality into brands and designs, transforming concepts into captivating
+      I'm a Graphic Designer passionate about crafting visual stories. <br /> With
+      5 years of experience and a degree from New York University's School of Design.
+      I infuse vitality into brands and designs, transforming concepts into captivating
       realities.
     </Fragment>
   </Hero>
 
   <Features3
     id="skills"
-    title="Skills"
-    subtitle="Discover the proficiencies that allow me to bring imagination to life through design."
+    title="Compétences"
+    subtitle=""
     columns={2}
     defaultIcon="tabler:point-filled"
     items={[
       {
-        title: 'HTML',
-        progress: '50',
-        progressColor: 'bg-sky-500'
+        title: "HTML",
+        progress: "50",
+        progressColor: "bg-sky-500",
       },
       {
-        title: 'CSS',
-        progress: '50',
-        progressColor: 'bg-sky-500'
+        title: "CSS",
+        progress: "50",
+        progressColor: "bg-sky-500",
       },
       {
-        title: 'Javascript',
-        progress: '50',
-        progressColor: 'bg-sky-500'
+        title: "Javascript",
+        progress: "50",
+        progressColor: "bg-sky-500",
       },
       {
-        title: 'HTML',
-        progress: '50',
-        progressColor: 'bg-sky-500'
+        title: "HTML",
+        progress: "50",
+        progressColor: "bg-sky-500",
       },
     ]}
   >
-  <Fragment slot="bg">
-    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-  </Fragment>
-</Features3>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features3>
 
   <!-- Content Widget **************** -->
 
@@ -184,48 +190,48 @@ const metadata = {
     classes={{ container: 'max-w-3xl' }}
   /> -->
 
-
   <!-- Content Widget **************** -->
 
   <Content
     id="projects"
-    title="Elevating visual narratives"
-    subtitle="Embark on a design journey that surpasses pixels, entering a realm of imagination. Explore my portfolio, where passion and creativity converge to shape enthralling visual narratives."
+    title="Projets"
+    subtitle="Voici une sélection de mes projets personnels et professionnels, mettant en avant mes compétences en développement front-end et back-end."
     isReversed
     items={[
       {
-        title: 'Description:',
+        title: "Description:",
         description:
-          'Developed a comprehensive brand identity for a tech startup, Tech Innovators, specializing in disruptive innovations. The goal was to convey a modern yet approachable image that resonated with both corporate clients and tech enthusiasts.',
+          "Application permettant au groupe de musique de proposer aux autres membres des musiques à jouer.",
       },
       {
-        title: 'Role:',
+        title: "Technique",
         description:
-          'Led the entire branding process from concept to execution. Created a dynamic logo that symbolized innovation, selected a vibrant color palette, and I designed corporate stationery, website graphics, and social media assets.',
+          "La recherche des musiques se fait via l'api de Soptify.<br>Le front utilise le framework Quasar<br>L'api est réaslié avec Strapi",
       },
     ]}
-    images={[{
-      src: 'public/projets/cover/1.png',
-      alt: 'Tech Design Image',
-    },
-    {
-      src: 'public/projets/cover/2.png',
-      alt: 'Tech Design Image',
-    },
-    {
-      src: 'public/projets/cover/3.png',
-      alt: 'Tech Design Image',
-    }]}
-    callToAction={{
-      target: '_blank',
-      text: 'Go to the project',
-      icon: 'tabler:chevron-right',
-      href: '#',
-    }}
+    images={[
+      {
+        src: "public/projets/cover/1.png",
+        alt: "Tech Design Image",
+      },
+      {
+        src: "public/projets/cover/2.png",
+        alt: "Tech Design Image",
+      },
+      {
+        src: "public/projets/cover/3.png",
+        alt: "Tech Design Image",
+      },
+    ]}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        Project 1: <br /><span class="text-2xl">Brand identity for tech innovators</span>
+      <h3
+        class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"
+      >
+        Cover: <br />
+        <span class="text-2xl">
+          Application pour groupe de musique
+          </span>
       </h3>
     </Fragment>
 
@@ -241,29 +247,33 @@ const metadata = {
     isAfterContent={true}
     items={[
       {
-        title: 'Description:',
+        title: "Description:",
         description:
           'Designed a captivating event poster for an art and music festival, "ArtWave Fusion," aiming to showcase the synergy between visual art and music genres.',
       },
       {
-        title: 'Role:',
+        title: "Role:",
         description: `Translated the festival's creative theme into a visually striking poster. Used bold typography, vibrant colors, and abstract elements to depict the fusion of art and music. Ensured the design captured the festival's vibrant atmosphere.`,
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1619983081563-430f63602796?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-      alt: 'Art and Music Poster Image',
+      src: "https://images.unsplash.com/photo-1619983081563-430f63602796?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
+      alt: "Art and Music Poster Image",
     }}
     callToAction={{
-      target: '_blank',
-      text: 'Go to the project',
-      icon: 'tabler:chevron-right',
-      href: '#',
+      target: "_blank",
+      text: "Go to the project",
+      icon: "tabler:chevron-right",
+      href: "#",
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        Project 2: <br /><span class="text-2xl">Event poster for art & music festival</span>
+      <h3
+        class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"
+      >
+        Project 2: <br /><span class="text-2xl"
+          >Event poster for art & music festival</span
+        >
       </h3>
     </Fragment>
 
@@ -279,28 +289,32 @@ const metadata = {
     isAfterContent={true}
     items={[
       {
-        title: 'Description:',
+        title: "Description:",
         description: `Redesigned the e-commerce website for an eco-conscious fashion brand, GreenVogue. The objective was to align the brand's online presence with its sustainable ethos and improve user experience.`,
       },
       {
-        title: 'Role:',
+        title: "Role:",
         description: `Conducted a thorough analysis of the brand's values and customer base to inform the design direction. Created a visually appealing interface with intuitive navigation, highlighting sustainable materials, and integrating a user-friendly shopping experience.`,
       },
     ]}
     image={{
-      src: 'https://plus.unsplash.com/premium_photo-1683288295841-782fa47e4770?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
-      alt: 'Fashion e-commerce Image',
+      src: "https://plus.unsplash.com/premium_photo-1683288295841-782fa47e4770?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+      alt: "Fashion e-commerce Image",
     }}
     callToAction={{
-      target: '_blank',
-      text: 'Go to the project',
-      icon: 'tabler:chevron-right',
-      href: '#',
+      target: "_blank",
+      text: "Go to the project",
+      icon: "tabler:chevron-right",
+      href: "#",
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        Project 3: <br /><span class="text-2xl">E-commerce website redesign for fashion brand</span>
+      <h3
+        class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"
+      >
+        Project 3: <br /><span class="text-2xl"
+          >E-commerce website redesign for fashion brand</span
+        >
       </h3>
     </Fragment>
 
@@ -309,7 +323,6 @@ const metadata = {
     </Fragment>
   </Content>
 
-  
   <!-- CallToAction Widget *********** -->
 
   <CallToAction
@@ -318,9 +331,9 @@ const metadata = {
     subtitle="Ready to transform your vision into captivating designs?"
     actions={[
       {
-        variant: 'primary',
-        text: 'Hire me',
-        href: '/',
+        variant: "primary",
+        text: "Hire me",
+        href: "/",
       },
     ]}
   />
