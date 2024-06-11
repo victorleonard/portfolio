@@ -14,6 +14,7 @@ const {
   content = await Astro.slots.render('content'),
   callToAction,
   items = [],
+  tags = [],
   columns,
   image = await Astro.slots.render('image'),
   images = await Astro.slots.render('images'),
@@ -58,6 +59,7 @@ const {
 
         <ItemGrid
           items={items}
+          tags={tags}
           columns={columns}
           defaultIcon="tabler:check"
           classes={{
