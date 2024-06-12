@@ -12,7 +12,7 @@ import BlogLatestPosts from "~/components/widgets/BlogLatestPosts.astro";
 import { getPermalink } from "~/utils/permalinks";
 
 const metadata = {
-  title: "Personal Homepage Demo",
+  title: "Victor LÉONARD - Developpeur Full Stack",
 };
 ---
 
@@ -29,7 +29,8 @@ const metadata = {
       actions={[
         {
           text: "Linkedin",
-          href: "#",
+          href: "https://www.linkedin.com/in/victorleonarddeveloppeur/",
+          target: "_blank"
         },
       ]}
       isSticky
@@ -41,21 +42,19 @@ const metadata = {
 
   <Hero
     id="hero"
-    title="Sarah Johnson"
-    tagline="Personal Web Demo"
+    title="Développeur Full Stack"
+    tagline="Victor LÉONARD"
     actions={[
       {
         variant: "primary",
-        text: "Hire me",
-        href: getPermalink("/contact#form"),
+        text: "Me contacter via Linkedin",
+        href: 'https://www.linkedin.com/in/victorleonarddeveloppeur/',
+        target: "_blank"
       },
     ]}
   >
     <Fragment slot="subtitle">
-      I'm a Graphic Designer passionate about crafting visual stories. <br /> With
-      5 years of experience and a degree from New York University's School of Design.
-      I infuse vitality into brands and designs, transforming concepts into captivating
-      realities.
+      Autodidacte et passionné par le développement web, le webdesign, et les nouvelles technologies, je suis constamment curieux et à l'affût des dernières innovations.<br> J'aime explorer les tendances émergentes et les intégrer dans mes projets pour créer des solutions innovantes et performantes.<br> N'hésitez pas à me contacter pour en savoir plus sur mon parcours et mes passions.
     </Fragment>
   </Hero>
 
@@ -69,22 +68,57 @@ const metadata = {
       {
         title: "HTML",
         progress: "50",
-        progressColor: "bg-sky-500",
+        progressColor: "bg-green-600",
       },
       {
         title: "CSS",
         progress: "50",
-        progressColor: "bg-sky-500",
+        progressColor: "bg-green-600",
       },
       {
         title: "Javascript",
         progress: "50",
-        progressColor: "bg-sky-500",
+        progressColor: "bg-green-600",
       },
       {
-        title: "HTML",
+        title: "Typescript",
         progress: "50",
-        progressColor: "bg-sky-500",
+        progressColor: "bg-green-600",
+      },
+      {
+        title: "VueJS",
+        progress: "50",
+        progressColor: "bg-green-400",
+      },
+      {
+        title: "Nuxt",
+        progress: "50",
+        progressColor: "bg-green-400",
+      },
+      {
+        title: "Astro",
+        progress: "20",
+        progressColor: "bg-green-400",
+      },
+      {
+        title: "PHP",
+        progress: "50",
+        progressColor: "bg-blue-500",
+      },
+      {
+        title: "Symfony",
+        progress: "50",
+        progressColor: "bg-blue-300",
+      },
+      {
+        title: "Node.js",
+        progress: "50",
+        progressColor: "bg-blue-500",
+      },
+      {
+        title: "Strapi",
+        progress: "50",
+        progressColor: "bg-blue-300",
       },
     ]}
   >
@@ -92,105 +126,6 @@ const metadata = {
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </Features3>
-
-  <!-- Content Widget **************** -->
-
-  <!-- <Content
-    id="about"
-    columns={3}
-    items={[
-      {
-        icon: 'tabler:brand-dribbble',
-        callToAction: {
-          target: '_blank',
-          text: 'Dribbble',
-          href: '#',
-        },
-      },
-      {
-        icon: 'tabler:brand-behance',
-        callToAction: {
-          target: '_blank',
-          text: 'Behance',
-          href: '#',
-        },
-      },
-      {
-        icon: 'tabler:brand-pinterest',
-        callToAction: {
-          target: '_blank',
-          text: 'Pinterest',
-          href: '#',
-        },
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1491349174775-aaafddd81942?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-      alt: 'Colorful Image',
-      loading: 'eager',
-    }}
-  >
-    <Fragment slot="content">
-      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About me</h2>
-      <p>
-        Welcome to my creative journey. My work is a testament to my commitment to bringing ideas to life, where each
-        pixel becomes a brushstroke in the canvas of imagination.
-      </p>
-      <br />
-      <p>
-        I find inspiration in the world around me, whether through the pages of a captivating novel, the intricate
-        details of typography, or the vibrant hues of nature during my outdoor escapades.
-      </p>
-      <br />
-      <p>If you're curious to dive deeper into my work, you can follow me:</p>
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content> -->
-
-  <!-- Steps Widget ****************** -->
-
-  <!-- <Steps
-    id="resume"
-    title="Work experience"
-    items={[
-      {
-        title:
-          'Graphic Designer <br /> <span class="font-normal">ABC Design Studio, New York, NY</span> <br /> <span class="text-sm font-normal">2021 - Present</span>',
-        description: `Collaborate with clients to understand design requirements and objectives. <br /> Develop branding solutions, including logos, color palettes, and brand guidelines. <br /> Design marketing materials such as brochures, posters, and digital assets. <br /> Create visually appealing user interfaces for websites and applications.`,
-        icon: 'tabler:briefcase',
-      },
-      {
-        title:
-          'Junior Graphic Designer <br /> <span class="font-normal">XYZ Creative Agency, Los Angeles, CA</span> <br /> <span class="text-sm font-normal">2018 - 2021</span>',
-        description: `Assisted senior designers in creating design concepts and visual assets. <br /> Contributed to the development of brand identities and marketing collateral. <br /> Collaborated with the marketing team to ensure consistent design across campaigns. <br /> Gained hands-on experience in various design software and tools.`,
-        icon: 'tabler:briefcase',
-      },
-    ]}
-    classes={{ container: 'max-w-3xl' }}
-  /> -->
-
-  <!-- Steps Widget ****************** -->
-
-  <!-- <Steps
-    id="resume"
-    title="Education"
-    items={[
-      {
-        title: `Master of Fine Arts in Graphic Design <br /> <span class="font-normal">New York University's School of Design</span> <br /> <span class="text-sm font-normal">2018 - 2020</span>`,
-        icon: 'tabler:school',
-      },
-      {
-        title: `Bachelor of Arts in Graphic Design <br /> <span class="font-normal">New York University's School of Design</span> <br /> <span class="text-sm font-normal">2014 - 2018</span>`,
-        icon: 'tabler:school',
-      },
-    ]}
-    classes={{ container: 'max-w-3xl' }}
-  /> -->
-
-  <!-- Content Widget **************** -->
 
   <Content
     id="projects"
@@ -372,9 +307,9 @@ const metadata = {
       </h3>
     </Fragment>
 
-    <Fragment slot="bg">
+    <!-- <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
+    </Fragment> -->
   </Content>
 
   <!-- CallToAction Widget *********** -->
@@ -382,12 +317,12 @@ const metadata = {
   <CallToAction
     id="contact"
     title="Contact"
-    subtitle="Ready to transform your vision into captivating designs?"
+    subtitle="Vous pouvez me contacter via linkedin"
     actions={[
       {
         variant: "primary",
-        text: "Hire me",
-        href: "/",
+        text: "Linkedin",
+        href: "https://www.linkedin.com/in/victorleonarddeveloppeur/",
       },
     ]}
   />
