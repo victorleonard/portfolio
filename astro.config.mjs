@@ -26,7 +26,7 @@ const whenExternalScripts = (items = []) =>
 
 export default defineConfig({
   site: 'https://victorleonard.github.io/portfolio',
-  base: 'portfolio',
+  base: '',
   output: 'static',
 
   integrations: [
