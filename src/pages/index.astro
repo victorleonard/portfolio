@@ -22,7 +22,7 @@ const metadata = {
     <Header
       links={[
         { text: "Présentation", href: "#" },
-        { text: "Compétence", href: "#skills" },
+        { text: "Compétences", href: "#skills" },
         { text: "Projets", href: "#projects" },
         { text: "Contact", href: "#contact" },
       ]}
@@ -30,7 +30,7 @@ const metadata = {
         {
           text: "Linkedin",
           href: "https://www.linkedin.com/in/victorleonarddeveloppeur/",
-          target: "_blank"
+          target: "_blank",
         },
       ]}
       isSticky
@@ -48,13 +48,18 @@ const metadata = {
       {
         variant: "primary",
         text: "Me contacter via Linkedin",
-        href: 'https://www.linkedin.com/in/victorleonarddeveloppeur/',
-        target: "_blank"
+        href: "https://www.linkedin.com/in/victorleonarddeveloppeur/",
+        target: "_blank",
       },
     ]}
   >
     <Fragment slot="subtitle">
-      Autodidacte et passionné par le développement web, le webdesign, et les nouvelles technologies, je suis constamment curieux et à l'affût des dernières innovations.<br> J'aime explorer les tendances émergentes et les intégrer dans mes projets pour créer des solutions innovantes et performantes.<br> N'hésitez pas à me contacter pour en savoir plus sur mon parcours et mes passions.
+      Autodidacte et passionné par le développement web, le webdesign, et les
+      nouvelles technologies, je suis constamment curieux et à l'affût des
+      dernières innovations.<br /> J'aime explorer les tendances émergentes et les
+      intégrer dans mes projets pour créer des solutions innovantes et performantes.<br
+      /> N'hésitez pas à me contacter pour en savoir plus sur mon parcours et mes
+      passions.
     </Fragment>
   </Hero>
 
@@ -146,29 +151,53 @@ const metadata = {
     ]}
     tags={[
       {
-        title: 'Javascript',
-        color: 'bg-yellow-100 text-yellow-80' 
+        title: "Javascript",
+        color: "bg-yellow-100 text-yellow-80 dark:text-yellow-900",
       },
       {
-        title: 'Quasar',
-        color: 'bg-yellow-100 text-yellow-80' 
+        title: "Quasar",
+        color: "bg-yellow-100 text-yellow-80 dark:text-yellow-900",
       },
       {
-        title: 'Strapi',
-        color: 'bg-blue-100 text-blue-700' 
-      }
+        title: "Strapi",
+        color: "bg-blue-100 text-blue-700 dark:text-blue-900",
+      },
     ]}
     images={[
-      {
-        src: "projets/cover/1.png",
-        alt: "",
-      },
       {
         src: "projets/cover/2.png",
         alt: "",
       },
       {
         src: "projets/cover/3.png",
+        alt: "",
+      },
+      {
+        src: "projets/cover/4.png",
+        alt: "",
+      },
+      {
+        src: "projets/cover/5.png",
+        alt: "",
+      },
+      {
+        src: "projets/cover/6.png",
+        alt: "",
+      },
+      {
+        src: "projets/cover/7.png",
+        alt: "",
+      },
+      {
+        src: "projets/cover/8.png",
+        alt: "",
+      },
+      {
+        src: "projets/cover/9.png",
+        alt: "",
+      },
+      {
+        src: "projets/cover/10.png",
         alt: "",
       },
     ]}
@@ -178,9 +207,7 @@ const metadata = {
         class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"
       >
         Cover: <br />
-        <span class="text-2xl">
-          Application pour groupe de musique
-          </span>
+        <span class="text-2xl"> Application pour groupe de musique </span>
       </h3>
     </Fragment>
 
@@ -207,44 +234,47 @@ const metadata = {
     ]}
     images={[
       {
-        src: "projets/jobs/jobs-1.png",
+        src: "projets/dictation/1.png",
         alt: "",
       },
       {
-        src: "projets/jobs/jobs-2.png",
+        src: "projets/dictation/2.png",
         alt: "",
       },
       {
-        src: "projets/jobs/jobs-3.png",
+        src: "projets/dictation/3.png",
         alt: "",
       },
-    ]},
+      {
+        src: "projets/dictation/4.png",
+        alt: "",
+      },
+    ]}
+    ,
     tags={[
       {
-        title: 'Javascript',
-        color: 'bg-yellow-100 text-yellow-80' 
+        title: "Javascript",
+        color: "bg-yellow-100 text-yellow-80 dark:text-yellow-900",
       },
       {
-        title: 'PHP',
-        color: 'bg-blue-200 text-blue-80' 
+        title: "PHP",
+        color: "bg-blue-200 text-blue-80 dark:text-blue-900",
       },
       {
-        title: 'Symfony',
-        color: 'bg-blue-100 text-blue-80' 
+        title: "Symfony",
+        color: "bg-blue-100 text-blue-80 dark:text-blue-900",
       },
       {
-        title: 'Quasar',
-        color: 'bg-yellow-100 text-yellow-80' 
-      }
+        title: "Quasar",
+        color: "bg-yellow-100 text-yellow-80 dark:text-yellow-900",
+      },
     ]}
   >
     <Fragment slot="content">
       <h3
         class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"
       >
-        Devoir : <br /><span class="text-2xl"
-          >Aide aux devoirs</span
-        >
+        Devoir : <br /><span class="text-2xl">Aide aux devoirs</span>
       </h3>
     </Fragment>
 
@@ -270,31 +300,32 @@ const metadata = {
     ]}
     images={[
       {
-        src: "/projets/jobs/jobs-1.jpg",
-        alt: "",
-      },
-      {
         src: "/projets/jobs/jobs-1.png",
         alt: "",
       },
       {
-        src: "/projets/jobs/jobs-1.png",
+        src: "/projets/jobs/jobs-2.png",
         alt: "",
       },
-    ]},
+      {
+        src: "/projets/jobs/jobs-3.png",
+        alt: "",
+      },
+    ]}
+    ,
     tags={[
       {
-        title: 'Javascript',
-        color: 'bg-yellow-100 text-yellow-80' 
+        title: "Javascript",
+        color: "bg-yellow-100 text-yellow-80 dark:text-yellow-900",
       },
       {
-        title: 'Quasar',
-        color: 'bg-yellow-100 text-yellow-80' 
+        title: "Quasar",
+        color: "bg-yellow-100 text-yellow-80 dark:text-yellow-900",
       },
       {
-        title: 'Strapi',
-        color: 'bg-blue-100 text-blue-700' 
-      }
+        title: "Strapi",
+        color: "bg-blue-100 text-blue-700",
+      },
     ]}
   >
     <Fragment slot="content">
@@ -302,8 +333,8 @@ const metadata = {
         class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"
       >
         Jobs: <br /><span class="text-2xl"
-          >Site d'offre d'emploi dédié aux métiers de l'architecture </span
-        >
+          >Site d'offre d'emploi dédié aux métiers de l'architecture
+        </span>
       </h3>
     </Fragment>
 
