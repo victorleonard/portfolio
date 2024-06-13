@@ -25,7 +25,7 @@ const whenExternalScripts = (items = []) =>
   hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
 
 export default defineConfig({
-  site: 'https://victorleonard.github.io',
+  site: 'https://victorleonard.github.io/portfolio',
   base: 'portfolio',
   output: 'static',
 
